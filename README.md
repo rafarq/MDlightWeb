@@ -46,9 +46,8 @@ A PHP-based documentation system that renders Markdown files with a clean, respo
 
 1. Clone the repository
 2. Ensure PHP 7.4+ is installed
-3. Run `composer install` to install dependencies
-4. Place your markdown files in the `md/` directory
-5. Configure your web server to point to the project directory
+3. Place your markdown files in the `md/` directory
+4. Configure your web server to point to the project directory
 
 ## Documentation Structure
 

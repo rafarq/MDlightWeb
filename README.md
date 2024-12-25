@@ -1,4 +1,5 @@
-# MDlightWeb
+# Markdown Documentation System
+
 A PHP-based documentation system that renders Markdown files with a clean, responsive interface and dark/light theme support.
 
 ## Features
@@ -46,8 +47,9 @@ A PHP-based documentation system that renders Markdown files with a clean, respo
 
 1. Clone the repository
 2. Ensure PHP 7.4+ is installed
-3. Place your markdown files in the `md/` directory
-4. Configure your web server to point to the project directory
+3. Run `composer install` to install dependencies
+4. Place your markdown files in the `md/` directory
+5. Configure your web server to point to the project directory
 
 ## Documentation Structure
 
@@ -95,4 +97,4 @@ The application supports light and dark themes:
 
 ## License
 
-GPL-3.0 license - Feel free to use this project for your documentation needs.
+MIT License - Feel free to use this project for your documentation needs.

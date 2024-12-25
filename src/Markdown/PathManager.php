@@ -25,19 +25,27 @@ class PathManager {
             return $path;
         }
         
-        // For images and other assets, just prepend 'md/'
-        if (preg_match('/\.(png|jpe?g|gif|svg|webp)$/i', $path)) {
+        // Get the directory of the current markdown file relative to the docs path
+        $currentDir = dirname($this->currentPath);
+        $relativeDir = str_replace($this->docsBasePath . DIRECTORY_SEPARATOR, '', $currentDir);
+        
+        // Construct the full server path to check if file exists
+        $fullPath = $currentDir . DIRECTORY_SEPARATOR . $path;
+        
+        // If the file exists relative to current directory, use that path
+        if (file_exists($fullPath)) {
+            // Return path relative to web root, maintaining the directory structure
+            return 'md/' . $relativeDir . '/' . $path;
+        }
+        
+        // If file doesn't exist in current directory, try base docs path
+        $baseFullPath = $this->docsBasePath . DIRECTORY_SEPARATOR . $path;
+        if (file_exists($baseFullPath)) {
             return 'md/' . $path;
         }
         
-        // For markdown files and other links
-        $relativePath = str_replace($this->docsBasePath . DIRECTORY_SEPARATOR, '', dirname($this->currentPath));
-        $relativePath = preg_replace('/^md\//', '', $relativePath);
-        
-        if ($relativePath && $relativePath !== '.') {
-            return 'md/' . $relativePath . '/' . $path;
-        }
-        
-        return 'md/' . $path;
+        // If file not found anywhere, return relative to current directory
+        // This maintains the expected structure even if file is missing
+        return 'md/' . $relativeDir . '/' . $path;
     }
 }

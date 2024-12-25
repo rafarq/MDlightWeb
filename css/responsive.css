@@ -1,0 +1,19 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        margin-bottom: 1rem;
+        max-height: none;
+    }
+    
+    .content {
+        width: 100%;
+    }
+}

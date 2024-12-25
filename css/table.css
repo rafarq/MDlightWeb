@@ -1,0 +1,29 @@
+/* Table Styles */
+.markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.markdown-table th,
+.markdown-table td {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.markdown-table th {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.markdown-table tr:nth-child(even) {
+    background: var(--bg-content);
+}
+
+.markdown-table tr:nth-child(odd) {
+    background: var(--bg-primary);
+}

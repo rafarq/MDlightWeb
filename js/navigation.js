@@ -1,8 +1,12 @@
 import { initializeCodeBlocks } from './codeBlock.js';
+import { initializeLightbox } from './lightbox.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize code blocks
     initializeCodeBlocks();
+    
+    // Initialize lightbox
+    initializeLightbox();
 
     // Handle section collapsing
     const sectionTitles = document.querySelectorAll('.section-title');
@@ -47,8 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = await response.text();
             document.getElementById('main-content').innerHTML = content;
             
-            // Re-initialize code blocks after content update
+            // Re-initialize code blocks and lightbox after content update
             initializeCodeBlocks();
+            initializeLightbox();
             
             // Update URL without triggering a reload
             history.pushState(null, '', `#${fileId}`);

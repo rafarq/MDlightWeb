@@ -97,4 +97,4 @@ The application supports light and dark themes:
 
 ## License
 
-MIT License - Feel free to use this project for your documentation needs.
+GPL3 License - Feel free to use this project for your documentation needs.

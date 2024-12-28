@@ -9,6 +9,29 @@
     color: var(--text-primary);
 }
 
+/* List Indentation */
+.markdown-content ul,
+.markdown-content ol {
+    padding-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.markdown-content ul ul,
+.markdown-content ol ol,
+.markdown-content ul ol,
+.markdown-content ol ul {
+    margin-bottom: 0;
+}
+
+/* Paragraph Spacing */
+.markdown-content p {
+    margin-bottom: 2rem;
+}
+
+.markdown-content p:last-child {
+    margin-bottom: 0;
+}
+
 /* Heading Styles */
 .markdown-content h1 {
     font-size: 2.5rem;
